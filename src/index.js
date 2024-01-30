@@ -1,7 +1,5 @@
 // write your code here
 
-// Instructions for making a burger
-
 // This food variable has Global scope
 const food = "Hamburger"
 if(5 === 5){
@@ -11,6 +9,7 @@ if(5 === 5){
 }
 // console.log(food)
 
+// Instructions for making a burger
 function makeABurger(){
     console.log('Gather ingredients!')
     console.log('Cook the burger')
