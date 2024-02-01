@@ -55,3 +55,53 @@ const otherFoods = [
 ]
 
 // write your code here
+
+// .querySelector()
+// const restaurantMenu = document.querySelector('#restaurant-menu')
+// console.log(restaurantMenu)
+
+// .getElementById()
+// const restaurantMenu = document.getElementById('restaurant-menu')
+// console.log(restaurantMenu)
+
+// .querySelectorAll()
+// const h3Elements = document.querySelectorAll('h3')
+// console.log(h3Elements)
+// console.log(h3Elements[0])
+
+// .getElementsByClassName()
+// const nameElementsCollection = document.getElementsByClassName('name')
+// console.log(nameElementsCollection)
+
+// .textContent
+// const nameElement = nameElementsCollection[0]
+// nameElement.textContent = "Burger"
+
+// const descriptionDisplayElement = document.getElementById('description-display')
+// descriptionDisplayElement.textContent = "I love burgers! Burgers are awesome!"
+
+// .src for updating an image
+// const detailImage = document.getElementsByClassName('detail-image')[0]
+// detailImage.src = "./assets/food/flatburger.jpeg"
+
+// .createElement()
+// const h2Element = document.createElement('h2')
+// h2Element.textContent = "Welcome to Flatburger!"
+// h2Element.className = "name"
+
+// .appendChild()
+// const foodDetailDivElement = document.getElementById('food-detail')
+// foodDetailDivElement.appendChild(h2Element)
+
+// .append()
+// foodDetailDivElement.append("Hello World!", "Greetings")
+
+// .remove()
+// foodDetailDivElement.remove()
+
+// .textContent vs .innerText vs. .innerHTML
+// const h1Element = document.createElement('h1')
+// h1Element.textContent = "<span>Greetings!\nClass is in session!</span>"
+// h1Element.innerText = "<span>Greetings!\nClass is in session!</span>"
+// h1Element.innerHTML = "<span>Greetings!\nClass is in session!</span>"
+// document.body.appendChild(h1Element)
