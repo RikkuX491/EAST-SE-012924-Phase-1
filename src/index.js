@@ -56,52 +56,43 @@ const otherFoods = [
 
 // write your code here
 
-// .querySelector()
-// const restaurantMenu = document.querySelector('#restaurant-menu')
-// console.log(restaurantMenu)
+// Deliverable # 1
+const restaurantMenuElement = document.getElementById('restaurant-menu')
 
-// .getElementById()
-// const restaurantMenu = document.getElementById('restaurant-menu')
-// console.log(restaurantMenu)
+for(let index = 0; index < burgers.length; index++){
+    const imgElement = document.createElement('img')
+    imgElement.className = 'burger'
+    imgElement.src = burgers[index].image
+    restaurantMenuElement.appendChild(imgElement)
+}
 
-// .querySelectorAll()
-// const h3Elements = document.querySelectorAll('h3')
-// console.log(h3Elements)
-// console.log(h3Elements[0])
+// Deliverable # 2
+otherFoods.forEach((food) => {
+    const imgElement = document.createElement('img')
+    imgElement.src = food.image
+    restaurantMenuElement.appendChild(imgElement)
+})
 
-// .getElementsByClassName()
-// const nameElementsCollection = document.getElementsByClassName('name')
-// console.log(nameElementsCollection)
+// Deliverable # 3
+const detailImageElement = document.getElementsByClassName('detail-image')[0]
+detailImageElement.src = burgers[0].image
 
-// .textContent
-// const nameElement = nameElementsCollection[0]
-// nameElement.textContent = "Burger"
+// Deliverable # 4
+const nameElement = document.getElementsByClassName('name')[0]
+nameElement.textContent = burgers[0].name
 
-// const descriptionDisplayElement = document.getElementById('description-display')
-// descriptionDisplayElement.textContent = "I love burgers! Burgers are awesome!"
+// Deliverable # 5
+const descriptionDisplayElement = document.getElementById('description-display')
+descriptionDisplayElement.textContent = burgers[0].description
 
-// .src for updating an image
-// const detailImage = document.getElementsByClassName('detail-image')[0]
-// detailImage.src = "./assets/food/flatburger.jpeg"
+// Deliverable # 6
+const imageElements = restaurantMenuElement.querySelectorAll('img')
+for(const imageElement of imageElements){
+    imageElement.style = "border-style: solid; border-color: red; border-width: 3px"
+}
 
-// .createElement()
-// const h2Element = document.createElement('h2')
-// h2Element.textContent = "Welcome to Flatburger!"
-// h2Element.className = "name"
-
-// .appendChild()
-// const foodDetailDivElement = document.getElementById('food-detail')
-// foodDetailDivElement.appendChild(h2Element)
-
-// .append()
-// foodDetailDivElement.append("Hello World!", "Greetings")
-
-// .remove()
-// foodDetailDivElement.remove()
-
-// .textContent vs .innerText vs. .innerHTML
-// const h1Element = document.createElement('h1')
-// h1Element.textContent = "<span>Greetings!\nClass is in session!</span>"
-// h1Element.innerText = "<span>Greetings!\nClass is in session!</span>"
-// h1Element.innerHTML = "<span>Greetings!\nClass is in session!</span>"
-// document.body.appendChild(h1Element)
+// Deliverable # 7
+const burgerElements = document.getElementsByClassName('burger')
+for(const burgerElement of burgerElements){
+    burgerElement.style.borderColor = "blue"
+}
