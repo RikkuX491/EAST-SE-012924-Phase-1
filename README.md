@@ -39,7 +39,7 @@ A `POST` request requires an additional argument, a request/config object that c
 
 - Body: The data from the request. Before the request can be sent, the data must be converted to JSON.
 
-```js
+``` javascript
 const newFruit = {
     "name": "Apple",
     "description": "A very delicious fruit!",
