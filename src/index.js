@@ -42,7 +42,7 @@ newFoodForm.addEventListener('submit', (event) => {
         description: newDescriptionInputElement.value
     }
 
-    // Deliverable # 1 - Optimistic rendering example
+    // Optimistic rendering example
     // addFoodImageToRestaurantMenu(newFood)
 
     // fetch('http://localhost:3000/foods', {
@@ -53,7 +53,7 @@ newFoodForm.addEventListener('submit', (event) => {
     //     body: JSON.stringify(newFood)
     // })
 
-    // Deliverable # 2 - Pessimistic rendering example
+    // Pessimistic rendering example
     fetch('http://localhost:3000/foods', {
         method: "POST",
         headers: {
