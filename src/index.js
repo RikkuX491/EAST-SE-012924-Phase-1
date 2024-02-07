@@ -42,7 +42,7 @@ newFoodForm.addEventListener('submit', (event) => {
         description: newDescriptionInputElement.value
     }
 
-    // Optimistic rendering example
+    // Deliverable # 1 - Optimistic rendering
     // addFoodImageToRestaurantMenu(newFood)
 
     // fetch('http://localhost:3000/foods', {
@@ -53,7 +53,7 @@ newFoodForm.addEventListener('submit', (event) => {
     //     body: JSON.stringify(newFood)
     // })
 
-    // Pessimistic rendering example
+    // Deliverable # 2 - Pessimistic rendering
     fetch('http://localhost:3000/foods', {
         method: "POST",
         headers: {
@@ -70,16 +70,8 @@ newFoodForm.addEventListener('submit', (event) => {
         }
         else{
             alert("Error: Unable to add new food!")
-            // alert(`Error -> ${response.status}: ${response.statusText}`)
         }
     })
-    // .then(newFoodData => {
-    //     addFoodImageToRestaurantMenu(newFoodData)
-    // })
-    // .catch(error => {
-    //     alert("Error: Unable to add new food!")
-    //     console.log(error)
-    // })
 
     newFoodForm.reset()
 })
