@@ -1,4 +1,5 @@
 const restaurantMenu = document.getElementById('restaurant-menu')
+let currentlyDisplayedFood = null
 
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
@@ -16,10 +17,24 @@ function addFoodImageToRestaurantMenu(food){
     imgElement.addEventListener('mouseover', () => {
         displayFoodDetails(food)
     })
+
+    // Adding the click event listener necessary to complete Deliverable # 2
+    imgElement.addEventListener('click', () => {
+
+        // Remove the element from #restaurant-menu
+        imgElement.remove()
+
+        // Deliverable # 2
+        fetch(`http://localhost:3000/foods/${currentlyDisplayedFood.id}`, {
+            method: "DELETE"
+        })
+    })
+
     restaurantMenu.appendChild(imgElement)
 }
 
 function displayFoodDetails(food){
+    currentlyDisplayedFood = food
     const foodDetailImageElement = document.getElementsByClassName('detail-image')[0]
     foodDetailImageElement.src = food.image
     const foodNameElement = document.getElementsByClassName('name')[0]
@@ -73,6 +88,17 @@ addToCartForm.addEventListener('submit', (event) => {
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
     numberInCartCountElement.textContent = sum
+
+    // Deliverable # 1
+    fetch(`http://localhost:3000/foods/${currentlyDisplayedFood.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            number_in_cart: sum
+        })
+    })
 
     addToCartForm.reset()
 })
