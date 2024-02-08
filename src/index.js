@@ -13,7 +13,7 @@ fetch('http://localhost:3000/foods')
 function addFoodImageToRestaurantMenu(food){
     const imgElement = document.createElement('img')
     imgElement.src = food.image
-    imgElement.addEventListener('click', () => {
+    imgElement.addEventListener('mouseover', () => {
         displayFoodDetails(food)
     })
     restaurantMenu.appendChild(imgElement)
@@ -26,6 +26,8 @@ function displayFoodDetails(food){
     foodNameElement.textContent = food.name
     const foodDescriptionDisplayElement = document.getElementById('description-display')
     foodDescriptionDisplayElement.textContent = food.description
+    const numberInCartCountElement = document.getElementById('number-in-cart-count')
+    numberInCartCountElement.textContent = food.number_in_cart
 }
 
 const newFoodForm = document.getElementById('new-food')
@@ -42,25 +44,13 @@ newFoodForm.addEventListener('submit', (event) => {
         description: newDescriptionInputElement.value
     }
 
-    // Deliverable # 1 - Optimistic rendering
-    // addFoodImageToRestaurantMenu(newFood)
-
-    // fetch('http://localhost:3000/foods', {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(newFood)
-    // })
-
-    // Deliverable # 2 - Pessimistic rendering
     fetch('http://localhost:3000/foods', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
-        body: JSON.stringify(newFood)
+        body: JSON.stringify({...newFood, number_in_cart: 0})
     })
     .then(response => {
         if(response.ok){
@@ -74,4 +64,15 @@ newFoodForm.addEventListener('submit', (event) => {
     })
 
     newFoodForm.reset()
+})
+
+const addToCartForm = document.getElementById('add-to-cart-form')
+addToCartForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const numberToAddInputElement = document.getElementById('number-to-add')
+    const numberInCartCountElement = document.getElementById('number-in-cart-count')
+    const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
+    numberInCartCountElement.textContent = sum
+
+    addToCartForm.reset()
 })
