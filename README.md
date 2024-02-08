@@ -17,6 +17,15 @@ Test your server by visiting this route in the browser:
 
 Then, open the `index.html` file on your browser to run the application.
 
+## Deliverables 
+
+We've been asked to build a website for a new restaurant, Flatburger, that displays a menu of food served at the restaurant.
+
+We will be using the `fetch()` function to make a `PATCH` request to the JSON server in response to form submission to update the value for `number_in_cart` for a food object in the database in addition to updating the frontend (our webpage) to update the data for the `number_in_cart` for the food. We will also be using the `fetch()` function to make a `DELETE` request to the JSON server in response to a `click` event to delete a food from the database in addition to updating the frontend (our webpage) to remove the food from the `restaurant-menu`. We will be using the concepts learned in this lecture to build out this app.
+
+1. Make a `PATCH` request to persist changes to update the `number_in_cart` for the displayed food when the `Add to Cart` button is clicked.
+2. Make a `DELETE` request to persist changes to delete the food from the database when an image is clicked within the `restaurant-menu`
+
 ## PATCH (Update)
 `PATCH` requests are requests to update / modify a resource.
 
