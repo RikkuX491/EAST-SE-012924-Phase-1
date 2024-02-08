@@ -5,28 +5,28 @@
       "name": "Flatburger",
       "image": "./assets/food/flatburger.jpeg",
       "description": "Our signature Flatburger which is a super delicious cheeseburger that'll leave you wanting another Flatburger! It's too good to be true!",
-      "number_in_cart": 0
+      "number_in_cart": 35
     },
     {
       "id": 2,
       "name": "Maple Bacon Burger",
       "image": "./assets/food/maple-bacon-burger.jpeg",
       "description": "A great option for a breakfast burger or a great option for brunch if you're hungry enough to eat 2 of these burgers!",
-      "number_in_cart": 0
+      "number_in_cart": 22
     },
     {
       "id": 3,
       "name": "Mushroom Burger",
       "image": "./assets/food/mushroom-burger.webp",
       "description": "A mushroom burger with our exclusive Flatburger melted cheese!",
-      "number_in_cart": 0
+      "number_in_cart": 19
     },
     {
       "id": 4,
       "name": "Avocado Bun Burger",
       "image": "./assets/food/avocado-bun-burger.jpeg",
       "description": "A healthier take on our signature Flatburger but with avocado buns!",
-      "number_in_cart": 0
+      "number_in_cart": 3
     },
     {
       "id": 5,
@@ -47,14 +47,14 @@
       "name": "Burrito",
       "image": "./assets/food/burrito.webp",
       "description": "A Flatburger style burrito with our exclusive Flatburger melted cheese and any meat of your choosing in addition to your choice of additional ingredients!",
-      "number_in_cart": 0
+      "number_in_cart": 30
     },
     {
       "id": 8,
       "name": "Taco",
       "image": "./assets/food/taco.jpeg",
       "description": "The Flatburger exclusive Taco! Get it while supplies last!",
-      "number_in_cart": 0
+      "number_in_cart": 15
     },
     {
       "id": 9,
@@ -68,7 +68,14 @@
       "name": "Onion Rings",
       "image": "./assets/food/onion-rings.jpeg",
       "description": "The Flatburger exclusive Onion Rings! Get them while supplies last!",
-      "number_in_cart": 0
+      "number_in_cart": 8
+    },
+    {
+      "name": "Ice Cream",
+      "image": "data:image/jpeg;base64,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",
+      "description": "I scream for ice cream!",
+      "number_in_cart": 4,
+      "id": 11
     }
   ]
 }
