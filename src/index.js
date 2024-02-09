@@ -38,3 +38,41 @@ function displayFoodDetails(food){
     const foodDescriptionDisplayElement = document.getElementById('description-display')
     foodDescriptionDisplayElement.textContent = food.description
 }
+
+// Lecture code begins here
+
+const cryptocurrencyULElement = document.getElementById('cryptocurrency-list')
+
+fetch('https://api.coincap.io/v2/assets')
+.then(response => response.json())
+.then(cryptocurrencyData => {
+
+    // Approach # 1 - Display cryptocurrencies whose rank is less than or equal to 10
+    // const filteredCryptocurrenciesArray = cryptocurrencyData.data.filter(cryptocurrency => {
+    //     return Number(cryptocurrency['rank']) <= 10
+    // })
+
+    // filteredCryptocurrenciesArray.forEach(cryptocurrency => {
+    //     const liElement = document.createElement('li')
+    //     liElement.textContent = `${cryptocurrency.name} (${cryptocurrency.symbol}): Rank ${cryptocurrency.rank}`
+    //     cryptocurrencyULElement.appendChild(liElement)
+    // })
+
+    // Approach # 2 - Display cryptocurrencies whose rank is less than or equal to 10
+    // cryptocurrencyData.data.filter(cryptocurrency => {
+    //     return Number(cryptocurrency['rank']) <= 10
+    // }).forEach(cryptocurrency => {
+    //     const liElement = document.createElement('li')
+    //     liElement.textContent = `${cryptocurrency.name} (${cryptocurrency.symbol}): Rank ${cryptocurrency.rank}`
+    //     cryptocurrencyULElement.appendChild(liElement)
+    // })
+
+    // Approach # 3 - Display cryptocurrencies whose rank is less than or equal to 10
+    cryptocurrencyData.data.forEach(cryptocurrency => {
+        if(Number(cryptocurrency['rank']) <= 10){
+            const liElement = document.createElement('li')
+            liElement.textContent = `${cryptocurrency.name} (${cryptocurrency.symbol}): Rank ${cryptocurrency.rank}`
+            cryptocurrencyULElement.appendChild(liElement)
+        }
+    })
+})
