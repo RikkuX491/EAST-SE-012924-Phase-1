@@ -1,7 +1,7 @@
-# Lecture # 8 - PATCH & DELETE Requests
+# Lecture # 9 - Communicating With External APIs
 ## SWBAT
-- [ ] Send a `PATCH` request using HTML forms and JavaScript
-- [ ] Send a `DELETE` request using HTML buttons and JavaScript
+- [ ] Understand how to communicate with External APIs
+- [ ] Understand how to manipulate data retrieved from External APIs when making a `GET` request
 
 ## Setup
 
@@ -17,43 +17,6 @@ Test your server by visiting this route in the browser:
 
 Then, open the `index.html` file on your browser to run the application.
 
-## Deliverables 
+## Introduction
 
-We've been asked to build a website for a new restaurant, Flatburger, that displays a menu of food served at the restaurant.
-
-We will be using the `fetch()` function to make a `PATCH` request to the JSON server in response to form submission to update the value for `number_in_cart` for a food object in the database in addition to updating the frontend (our webpage) to update the data for the `number_in_cart` for the food. We will also be using the `fetch()` function to make a `DELETE` request to the JSON server in response to a `click` event to delete a food from the database in addition to updating the frontend (our webpage) to remove the food from the `restaurant-menu`. We will be using the concepts learned in this lecture to build out this app.
-
-1. Make a `PATCH` request to persist changes to update the `number_in_cart` for the displayed food when the `Add to Cart` button is clicked.
-2. Make a `DELETE` request to persist changes to delete the food from the database when an image is clicked within the `restaurant-menu`
-
-## PATCH (Update)
-`PATCH` requests are requests to update / modify a resource.
-
-- The url in a `PATCH` request requires an id to identify the resource being updated. 
-- The HTTP `method` is `'PATCH'`
-- The `body` can take the full resource or one property of the resource.
-
-``` javascript
-let exampleID = 7
-
-fetch(`http://localhost:3000/foods/${exampleID}`, {
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({name: "Spaghetti"})
-})
-```
-
-## DELETE
-`DELETE` requests are requests to remove a resource from the server. Unlike `POST` requests and `PATCH` requests, `DELETE` requests don't require headers or a body, though some backend frameworks may require a header.
-
-`DELETE` requests do require the `method` and the id of the resource being deleted.
-
-``` javascript
-let exampleID = 7
-
-fetch(`http://localhost:3000/foods/${exampleID}`, {
-    method: 'DELETE'
-})
-```
+Today we will continue to build our app for the Flatburger restaurant. We will use fetch() to make a GET request to an External API to include additional information obtained from the External API in our app. We will be using the concepts learned in this lecture to build out this app.

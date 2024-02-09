@@ -1,5 +1,4 @@
 const restaurantMenu = document.getElementById('restaurant-menu')
-let currentlyDisplayedFood = null
 
 fetch('http://localhost:3000/foods')
 .then(response => response.json())
@@ -24,7 +23,6 @@ function addFoodImageToRestaurantMenu(food){
         // Remove the element from #restaurant-menu
         imgElement.remove()
 
-        // Deliverable # 2
         fetch(`http://localhost:3000/foods/${currentlyDisplayedFood.id}`, {
             method: "DELETE"
         })
@@ -44,61 +42,3 @@ function displayFoodDetails(food){
     const numberInCartCountElement = document.getElementById('number-in-cart-count')
     numberInCartCountElement.textContent = food.number_in_cart
 }
-
-const newFoodForm = document.getElementById('new-food')
-newFoodForm.addEventListener('submit', (event) => {
-    event.preventDefault()
-
-    const newNameInputElement = document.getElementById('new-name')
-    const newImageInputElement = document.getElementById('new-image')
-    const newDescriptionInputElement = document.getElementById('new-description')
-
-    const newFood = {
-        name: newNameInputElement.value,
-        image: newImageInputElement.value,
-        description: newDescriptionInputElement.value
-    }
-
-    fetch('http://localhost:3000/foods', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({...newFood, number_in_cart: 0})
-    })
-    .then(response => {
-        if(response.ok){
-            response.json().then(newFoodData => {
-                addFoodImageToRestaurantMenu(newFoodData)
-            })
-        }
-        else{
-            alert("Error: Unable to add new food!")
-        }
-    })
-
-    newFoodForm.reset()
-})
-
-const addToCartForm = document.getElementById('add-to-cart-form')
-addToCartForm.addEventListener('submit', (event) => {
-    event.preventDefault()
-    const numberToAddInputElement = document.getElementById('number-to-add')
-    const numberInCartCountElement = document.getElementById('number-in-cart-count')
-    const sum = Number(numberInCartCountElement.textContent) + Number(numberToAddInputElement.value)
-    numberInCartCountElement.textContent = sum
-
-    // Deliverable # 1
-    fetch(`http://localhost:3000/foods/${currentlyDisplayedFood.id}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            number_in_cart: sum
-        })
-    })
-
-    addToCartForm.reset()
-})
