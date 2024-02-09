@@ -17,10 +17,8 @@ function addFoodImageToRestaurantMenu(food){
         displayFoodDetails(food)
     })
 
-    // Adding the click event listener necessary to complete Deliverable # 2
     imgElement.addEventListener('click', () => {
 
-        // Remove the element from #restaurant-menu
         imgElement.remove()
 
         fetch(`http://localhost:3000/foods/${currentlyDisplayedFood.id}`, {
@@ -39,6 +37,4 @@ function displayFoodDetails(food){
     foodNameElement.textContent = food.name
     const foodDescriptionDisplayElement = document.getElementById('description-display')
     foodDescriptionDisplayElement.textContent = food.description
-    const numberInCartCountElement = document.getElementById('number-in-cart-count')
-    numberInCartCountElement.textContent = food.number_in_cart
 }

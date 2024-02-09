@@ -22,7 +22,6 @@
         <div id="food-detail">
             <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
             <h2 class="name">Insert Name Here</h2>
-            <h2>Number In Cart: <span id="number-in-cart-count">[X]</span></h2>
         </div>
 
         <h3>Description:</h3>
@@ -30,21 +29,10 @@
             Insert food description here
         </p>
 
-        <form id="add-to-cart-form">
-            <input type="text" placeholder="Number to add..." id="number-to-add" name="number-to-add" />
-            <input type="submit" value="Add to Cart" />
-        </form>
+        <h1>Here are the cryptocurrencies that we accept as payment:</h1>
+        <ul id="cryptocurrency-list">
+            <!-- Cryptocurrency LI Elements here -->
+        </ul>
 
-        <!-- New Food Form -->
-        <form id="new-food">
-            <h4>Add New Food</h4>
-            <label for="name">Name: </label>
-            <input type="text" name="name" id="new-name" required />
-            <label for="image">Image: </label>
-            <input type="text" name="image" id="new-image" required />
-            <label for="description">Description: </label>
-            <textarea name="description" id="new-description" required ></textarea>
-            <input type="submit" value="Create" />
-        </form>
     </body>
 </html>
