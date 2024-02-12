@@ -17,4 +17,4 @@
 |6 | Communicating with the Server    	|[Video](https://www.youtube.com/watch?v=cOxY61VznD0)|[06_starter](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/06_starter)|[06_solution](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/06_solution)|
 |7 | POST Requests                    	|[Video](https://www.youtube.com/watch?v=voHNL-3sjos)|[07_starter](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/07_starter)|[07_solution](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/07_solution)|
 |8 | PATCH & DELETE Requests          	|[Video](https://www.youtube.com/watch?v=VZI99YyKdK8)|[08_starter](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/08_starter)|[08_solution](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/08_solution)|
-|9 | Communicating with External APIs 	||||
+|9 | Communicating with External APIs 	|[Video](https://www.youtube.com/watch?v=5BuaZjcVl7g)|[09_starter](https://github.com/RikkuX491/EAST-SE-012924-Phase-1/tree/09_starter)|N/A|
